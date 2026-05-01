@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
@@ -8,179 +9,183 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      --black: #0d0d0d;
-      --white: #f0ece4;
-      --acid:  #c8f400;
-      --red:   #e81500;
-    }
+```
+:root {
+  --black: #0d0d0d;
+  --white: #f0ece4;
+  --acid:  #c8f400;
+  --red:   #e81500;
+}
 
-    html, body { height: 100dvh; }
+html { height: 100dvh; background: var(--red); }
+body { height: 100dvh; }
 
-    .page {
-      display: flex;
-      flex-direction: column;
-      height: 100dvh;
-      max-width: 480px;
-      margin: 0 auto;
-      background: var(--white);
-      color: var(--black);
-      font-family: 'Unbounded', sans-serif;
-    }
+.page {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--white);
+  color: var(--black);
+  font-family: 'Unbounded', sans-serif;
+}
 
-    /* ── EMERGENCY 1/5 ── */
-    .emergency {
-      height: calc(25dvh + env(safe-area-inset-top));
-      padding-top: env(safe-area-inset-top);
-      background: var(--red);
-      border-bottom: 3px solid var(--black);
-      flex-shrink: 0;
-    }
+/* ── EMERGENCY 1/5 ── */
+.emergency {
+  height: calc(25dvh + env(safe-area-inset-top));
+  padding-top: env(safe-area-inset-top);
+  background: var(--red);
+  border-bottom: 3px solid var(--black);
+  flex-shrink: 0;
+}
 
-    .emg-link {
-      display: flex;
-      height: 100%;
-      align-items: center;
-      text-decoration: none;
-      padding: 0 24px;
-      gap: 16px;
-      -webkit-tap-highlight-color: transparent;
-    }
+.emg-link {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  text-decoration: none;
+  padding: 0 24px;
+  gap: 16px;
+  -webkit-tap-highlight-color: transparent;
+}
 
-    .emg-link:active { filter: brightness(0.82); }
+.emg-link:active { filter: brightness(0.82); }
 
-    .emg-text { flex: 1; }
+.emg-text { flex: 1; }
 
-    .emg-eyebrow {
-      font-size: 10px;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-      margin-bottom: 5px;
-    }
+.emg-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 5px;
+}
 
-    .emg-title {
-      font-size: clamp(22px, 6.5vw, 30px);
-      font-weight: 900;
-      color: #fff;
-      text-transform: uppercase;
-      line-height: 1;
-    }
+.emg-title {
+  font-size: clamp(22px, 6.5vw, 30px);
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1;
+}
 
-    .emg-btn {
-      background: #fff;
-      color: var(--red);
-      font-size: 10px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      padding: 10px 14px;
-      border: 3px solid var(--black);
-      box-shadow: 4px 4px 0 var(--black);
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
+.emg-btn {
+  background: #fff;
+  color: var(--red);
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 10px 14px;
+  border: 3px solid var(--black);
+  box-shadow: 4px 4px 0 var(--black);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
 
-    /* ── NAME BAND ── */
-    .name-band {
-      background: var(--black);
-      color: var(--white);
-      padding: 10px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      flex-shrink: 0;
-    }
+/* ── NAME BAND ── */
+.name-band {
+  background: var(--black);
+  color: var(--white);
+  padding: 10px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-shrink: 0;
+}
 
-    .name-text {
-      font-size: clamp(18px, 5.5vw, 26px);
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: -0.02em;
-    }
+.name-text {
+  font-size: clamp(18px, 5.5vw, 26px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
 
-    .name-tag {
-      font-size: 9px;
-      letter-spacing: 0.2em;
-      color: var(--acid);
-      text-transform: uppercase;
-    }
+.name-tag {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: var(--acid);
+  text-transform: uppercase;
+}
 
-    /* ── CARDS AREA ── */
-    .cards {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      padding: 20px 24px;
-      gap: 14px;
-    }
+/* ── CARDS AREA ── */
+.cards {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 24px;
+  gap: 14px;
+}
 
-    /* ── BUTTON ── */
-    .card-btn {
-      display: flex;
-      align-items: stretch;
-      text-decoration: none;
-      color: var(--black);
-      border: 3px solid var(--black);
-      box-shadow: 5px 5px 0 var(--black);
-      background: var(--white);
-      height: 90px;
-      -webkit-tap-highlight-color: transparent;
-      transition: transform 0.08s, box-shadow 0.08s, background 0.08s;
-    }
+/* ── BUTTON ── */
+.card-btn {
+  display: flex;
+  align-items: stretch;
+  text-decoration: none;
+  color: var(--black);
+  border: 3px solid var(--black);
+  box-shadow: 5px 5px 0 var(--black);
+  background: var(--white);
+  height: 90px;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.08s, box-shadow 0.08s, background 0.08s;
+}
 
-    .card-btn:active {
-      transform: translate(5px, 5px);
-      box-shadow: none;
-      background: var(--acid);
-    }
+.card-btn:active {
+  transform: translate(5px, 5px);
+  box-shadow: none;
+  background: var(--acid);
+}
 
-    .btn-time {
-      width: 100px;
-      flex-shrink: 0;
-      background: var(--black);
-      color: var(--white);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
+.btn-time {
+  width: 100px;
+  flex-shrink: 0;
+  background: var(--black);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
-    .btn-num {
-      font-size: 30px;
-      font-weight: 900;
-      line-height: 1;
-    }
+.btn-num {
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1;
+}
 
-    .btn-unit {
-      font-size: 9px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      opacity: 0.4;
-      margin-top: 2px;
-    }
+.btn-unit {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.4;
+  margin-top: 2px;
+}
 
-    .btn-label {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      padding: 0 18px;
-      font-size: clamp(14px, 4vw, 18px);
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      line-height: 1.15;
-    }
+.btn-label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  font-size: clamp(14px, 4vw, 18px);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+}
 
-    .btn-arrow {
-      width: 44px;
-      flex-shrink: 0;
-      border-left: 3px solid var(--black);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      background: var(--acid);
-    }
+.btn-arrow {
+  width: 44px;
+  flex-shrink: 0;
+  border-left: 3px solid var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  background: var(--acid);
+}
+```
+
   </style>
 </head>
 <body>
@@ -203,32 +208,34 @@
 
   <div class="cards">
 
-    <a href="https://calendar.app.google/RAhYunDrTMcDChpn8" class="card-btn" target="_blank" rel="noopener">
-      <div class="btn-time">
-        <div class="btn-num">60</div>
-        <div class="btn-unit">мин</div>
-      </div>
-      <div class="btn-label">Час твоего времени</div>
-      <div class="btn-arrow">→</div>
-    </a>
+```
+<a href="https://calendar.app.google/RAhYunDrTMcDChpn8" class="card-btn" target="_blank" rel="noopener">
+  <div class="btn-time">
+    <div class="btn-num">60</div>
+    <div class="btn-unit">мин</div>
+  </div>
+  <div class="btn-label">Час твоего времени</div>
+  <div class="btn-arrow">→</div>
+</a>
 
-    <a href="https://calendar.app.google/cVXEUgjE627LVbNv6" class="card-btn" target="_blank" rel="noopener">
-      <div class="btn-time">
-        <div class="btn-num">30</div>
-        <div class="btn-unit">мин</div>
-      </div>
-      <div class="btn-label">Без воды</div>
-      <div class="btn-arrow">→</div>
-    </a>
+<a href="https://calendar.app.google/cVXEUgjE627LVbNv6" class="card-btn" target="_blank" rel="noopener">
+  <div class="btn-time">
+    <div class="btn-num">30</div>
+    <div class="btn-unit">мин</div>
+  </div>
+  <div class="btn-label">Без воды</div>
+  <div class="btn-arrow">→</div>
+</a>
 
-    <a href="https://calendar.app.google/ZffkDgr2B5jt9amWA" class="card-btn" target="_blank" rel="noopener">
-      <div class="btn-time">
-        <div class="btn-num">15</div>
-        <div class="btn-unit">мин</div>
-      </div>
-      <div class="btn-label">Коротко и ясно</div>
-      <div class="btn-arrow">→</div>
-    </a>
+<a href="https://calendar.app.google/ZffkDgr2B5jt9amWA" class="card-btn" target="_blank" rel="noopener">
+  <div class="btn-time">
+    <div class="btn-num">15</div>
+    <div class="btn-unit">мин</div>
+  </div>
+  <div class="btn-label">Коротко и ясно</div>
+  <div class="btn-arrow">→</div>
+</a>
+```
 
   </div>
 
