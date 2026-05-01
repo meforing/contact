@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
   <title>ВСТРЕЧА</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Unbounded:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -15,13 +15,7 @@
       --red:   #e81500;
     }
 
-    html, body {
-      height: 100dvh;
-      background: var(--white);
-      color: var(--black);
-      font-family: 'Space Mono', monospace;
-      overflow: hidden;
-    }
+    html, body { height: 100dvh; }
 
     .page {
       display: flex;
@@ -29,14 +23,17 @@
       height: 100dvh;
       max-width: 480px;
       margin: 0 auto;
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Unbounded', sans-serif;
     }
 
     /* ── EMERGENCY 1/5 ── */
     .emergency {
       height: 20dvh;
       background: var(--red);
-      flex-shrink: 0;
       border-bottom: 3px solid var(--black);
+      flex-shrink: 0;
     }
 
     .emg-link {
@@ -45,8 +42,8 @@
       align-items: center;
       text-decoration: none;
       padding: 0 24px;
-      -webkit-tap-highlight-color: transparent;
       gap: 16px;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .emg-link:active { filter: brightness(0.82); }
@@ -62,7 +59,6 @@
     }
 
     .emg-title {
-      font-family: 'Unbounded', sans-serif;
       font-size: clamp(22px, 6.5vw, 30px);
       font-weight: 900;
       color: #fff;
@@ -73,7 +69,6 @@
     .emg-btn {
       background: #fff;
       color: var(--red);
-      font-family: 'Unbounded', sans-serif;
       font-size: 10px;
       font-weight: 900;
       text-transform: uppercase;
@@ -90,7 +85,6 @@
       background: var(--black);
       color: var(--white);
       padding: 10px 24px;
-      border-bottom: 3px solid var(--black);
       display: flex;
       justify-content: space-between;
       align-items: baseline;
@@ -98,7 +92,6 @@
     }
 
     .name-text {
-      font-family: 'Unbounded', sans-serif;
       font-size: clamp(18px, 5.5vw, 26px);
       font-weight: 900;
       text-transform: uppercase;
@@ -117,12 +110,11 @@
       flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
       padding: 20px 24px;
       gap: 14px;
     }
 
-    /* ── SINGLE BUTTON ── */
+    /* ── BUTTON ── */
     .card-btn {
       display: flex;
       align-items: stretch;
@@ -131,15 +123,14 @@
       border: 3px solid var(--black);
       box-shadow: 5px 5px 0 var(--black);
       background: var(--white);
+      height: 90px;
       -webkit-tap-highlight-color: transparent;
       transition: transform 0.08s, box-shadow 0.08s, background 0.08s;
-      cursor: pointer;
-      height: 90px;
     }
 
     .card-btn:active {
       transform: translate(5px, 5px);
-      box-shadow: 0 0 0 var(--black);
+      box-shadow: none;
       background: var(--acid);
     }
 
@@ -152,11 +143,9 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      border-right: 3px solid var(--black);
     }
 
     .btn-num {
-      font-family: 'Unbounded', sans-serif;
       font-size: 30px;
       font-weight: 900;
       line-height: 1;
@@ -175,10 +164,8 @@
       display: flex;
       align-items: center;
       padding: 0 18px;
-      font-family: 'Unbounded', sans-serif;
       font-size: clamp(14px, 4vw, 18px);
       font-weight: 700;
-      text-transform: none;
       letter-spacing: 0.02em;
       line-height: 1.15;
     }
@@ -198,24 +185,21 @@
 <body>
 <div class="page">
 
-  <!-- EMERGENCY 1/5 -->
   <div class="emergency">
     <a href="https://t.me/emergency_mikhail_bot" class="emg-link" target="_blank" rel="noopener">
       <div class="emg-text">
         <div class="emg-eyebrow">⚡ Экстренный контакт</div>
         <div class="emg-title">Telegram</div>
       </div>
-      <div class="emg-btn">Написать</div>
+      <span class="emg-btn">Написать</span>
     </a>
   </div>
 
-  <!-- NAME BAND -->
   <div class="name-band">
     <div class="name-text">Михаил</div>
-    <div class="name-tag">MEET · 2025</div>
+    <div class="name-tag">MEET · <span id="yr"></span></div>
   </div>
 
-  <!-- BUTTONS -->
   <div class="cards">
 
     <a href="https://calendar.app.google/RAhYunDrTMcDChpn8" class="card-btn" target="_blank" rel="noopener">
@@ -248,5 +232,6 @@
   </div>
 
 </div>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
 </body>
 </html>
