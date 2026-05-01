@@ -16,7 +16,7 @@
     }
 
     html { height: 100dvh; background: var(--red); }
-    body { height: 100dvh; }
+    body { height: 100dvh; background: var(--white); }
 
     .page {
       display: flex;
@@ -26,8 +26,7 @@
       margin: 0 auto;
       background: var(--white);
       color: var(--black);
-      font-family: 'Unbounded', sans-serif;
-    }
+      padding-bottom: env(safe-area-inset-bottom);
 
     /* ── EMERGENCY 1/5 ── */
     .emergency {
